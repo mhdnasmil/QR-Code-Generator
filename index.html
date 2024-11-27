@@ -10,7 +10,6 @@
     <meta name="description" content="QR Code generator for free">
 </head>
 <body>
-    <div class="nav2"></div>
     <div class="container">
         <p>Enter your text or URL</p>
         <input type="text" placeholder="Text or URL" id="qrText">
@@ -20,7 +19,6 @@
 
         </div>
         <button onclick="Generate()" id="generate-btn">Generate QR Code</button>
-        <button id="download-btn" style="display: none;">Download QR Code</button>
         <H5 class="credits">Copyright © ZN Media Pvt.Ltd. <br>
             Website design by Nasmil</H5>
     </div>
@@ -31,13 +29,10 @@
         let qrText = document.getElementById("qrText");
         let qrImage = document.getElementById("qrImage");
         let generatebtn = document.getElementById("generate-btn");
-        let downloadbtn= document.getElementById("download-btn");
         function Generate(){
             if(qrText.value.length > 0){
                  qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
                  imgBox.classList.add("show-img");
-                 generatebtn.style.display = 'none';
-                 downloadbtn.style.display = 'inline';
                 }
             else{
                 qrText.classList.add('error');
